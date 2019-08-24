@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header/>
-    <Form/>
-    <TodoContainer/>
+    <Form />
+    <TodoContainer v-bind:todos="todos" v-bind:loading="loading"/>
   </div>
 </template>
 
@@ -20,7 +20,24 @@ export default {
   }, 
   data() {
     return {
-      
+      todos: [
+        {
+          id: 1,
+          text: "Todo One",
+          completed: false
+        },
+        {
+          id: 2,
+          text: "Todo Two",
+          completed: false
+        },
+        {
+          id: 3,
+          text: "Todo Three",
+          completed: false
+        }
+      ],
+      loading: false
     }
   }
 }
@@ -28,7 +45,7 @@ export default {
 
 <style>
 * {
-   box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   }
