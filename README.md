@@ -1,4 +1,8 @@
-# todo-list
+# Vue Your Todos ✔️
+
+## About
+
+The developer learned Vue and created this app in several hours. This is a simple todo app. The user can add, complete, delete, and edit their todos. 
 
 ## Project setup
 ```
@@ -15,15 +19,15 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
 ### Lints and fixes files
 ```
 npm run lint
+
 ```
+
+## Homepage
+
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
