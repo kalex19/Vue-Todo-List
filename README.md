@@ -2,7 +2,7 @@
 
 ## About
 
-The developer learned Vue and created this app in several hours. This is a simple todo app. The user can add, complete, delete, and edit their todos. 
+The developer learned Vue and created this app in several hours. This is a simple todo app. The user can add, complete, delete, star, and edit their todos. 
 
 ## Project setup
 ```
