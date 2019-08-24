@@ -23,17 +23,17 @@ export default {
       todos: [
         {
           id: 1,
-          text: "Todo One",
+          text: "Cook Dinner",
           completed: false
         },
         {
           id: 2,
-          text: "Todo Two",
+          text: "Make Bed",
           completed: false
         },
         {
           id: 3,
-          text: "Todo Three",
+          text: "Water Plants",
           completed: false
         }
       ]

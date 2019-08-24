@@ -1,6 +1,7 @@
 <template>
-  <div class="todo" v-bind:class="{'isCompleted':completed}">
-    <h3 @click="$emit('line-through')">{{text}}</h3>
+  <div class="todo"  >
+    <input  v-bind:class="{'isCompleted':completed}" :value="text"/>
+    <button @click="$emit('line-through')" class="checkBtn">✔️</button>
     <button @click="$emit('del-todo')" class="deleteBtn">X</button>
   </div>
 </template>
@@ -20,14 +21,16 @@ export default {
 <style>
 
 .todo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 75% 12.5% 12.5%;
+  justify-content: space-evenly;
+  text-align: left;
   width: 30%;
 }
 
 h3 {
   font-size: 2em;
+  outline: none;
 }
 
 .isCompleted {
@@ -35,7 +38,8 @@ h3 {
   text-decoration-color: pink;
 }
 
-.deleteBtn {
+.deleteBtn,
+.checkBtn {
   border-radius: 50%;
   height: 30px;
   width: 30px;
