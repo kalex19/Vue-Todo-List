@@ -21,7 +21,8 @@ export default {
       const newTodo = {
         id: Date.now(),
         text: this.text,
-        completed: false
+        completed: false,
+        starred: false
       }
       this.$emit("add-todo", newTodo);
       this.text = "";

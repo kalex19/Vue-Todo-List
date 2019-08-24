@@ -1,5 +1,6 @@
 <template>
   <div class="todo"  >
+    <i class="fas fa-star" v-bind:class="{'isStarred':starred}" @click="$emit('star-todo')"></i>
     <input  v-bind:class="{'isCompleted':completed}" :value="text"/>
     <button @click="$emit('line-through')" class="checkBtn">✔️</button>
     <button @click="$emit('del-todo')" class="deleteBtn">X</button>
@@ -13,7 +14,8 @@ export default {
   props: {
     id: Number,
     text: String,
-    completed: Boolean
+    completed: Boolean,
+    starred: Boolean
     }
 }
 </script>
@@ -22,20 +24,31 @@ export default {
 
 .todo {
   display: grid;
-  grid-template-columns: 75% 12.5% 12.5%;
+  grid-template-columns: 10% 70% 10% 10%;
   justify-content: space-evenly;
   text-align: left;
-  width: 30%;
+  width: 35%;
 }
 
-h3 {
+input {
   font-size: 2em;
   outline: none;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .isCompleted {
   text-decoration: line-through;
   text-decoration-color: pink;
+}
+
+.fas {
+  padding-top: 30%;
+  color: white;
+}
+
+.isStarred {
+ color: rgb(243, 146, 162);
 }
 
 .deleteBtn,
@@ -46,6 +59,5 @@ h3 {
   font-size: .5em;
   outline: none;
 }
-
 
 </style>

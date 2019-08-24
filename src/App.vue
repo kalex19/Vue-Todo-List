@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <Form v-on:add-todo="addTodo" />
-    <TodoContainer v-bind:todos="todos" v-on:del-todo="deleteTodo" v-on:line-through="lineThrough"/>
+    <TodoContainer v-bind:todos="todos" v-on:del-todo="deleteTodo" v-on:line-through="lineThrough" v-on:star-todo="starTodo"/>
   </div>
 </template>
 
@@ -24,17 +24,20 @@ export default {
         {
           id: 1,
           text: "Cook Dinner",
-          completed: false
+          completed: false,
+          starred: false
         },
         {
           id: 2,
           text: "Make Bed",
-          completed: false
+          completed: false,
+          starred: false
         },
         {
           id: 3,
           text: "Water Plants",
-          completed: false
+          completed: false,
+          starred: false
         }
       ]
     }
@@ -50,6 +53,11 @@ export default {
        },
       addTodo(newTodo){
         this.todos = [...this.todos, newTodo]
+      },
+      starTodo(id){
+        const todoToggle = this.todos.find(todo => todo.id === id);
+            todoToggle.starred = !todoToggle.starred
+            this.$forceUpdate()
       }
   }
 }

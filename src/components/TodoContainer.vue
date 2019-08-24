@@ -1,7 +1,10 @@
 <template>
   <section id="todoContainer">
-    <div v-bind:key="todo.id" v-for="todo in todos">
-      <Todo v-bind="todo" v-on:del-todo="$emit('del-todo', todo.id)" v-on:line-through="$emit('line-through', todo.id)"/>
+    <div v-bind:key="todo.id" v-for="todo in todos" v-show="todo.starred">
+      <Todo v-bind="todo" v-on:del-todo="$emit('del-todo', todo.id)" v-on:line-through="$emit('line-through', todo.id)" v-on:star-todo="$emit('star-todo', todo.id)"/>
+    </div>
+    <div v-bind:key="todo.id" v-for="todo in todos" v-show="!todo.starred">
+      <Todo v-bind="todo" v-on:del-todo="$emit('del-todo', todo.id)" v-on:line-through="$emit('line-through', todo.id)" v-on:star-todo="$emit('star-todo', todo.id)"/>
     </div>
   </section>
 </template>
