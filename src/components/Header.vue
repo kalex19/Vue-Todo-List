@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div id="header" >
     <h1>{{title}}</h1>
   </div>
 </template>
@@ -26,4 +26,5 @@ h1 {
   color: pink;
   font-size: 4em;
   }
+
 </style>

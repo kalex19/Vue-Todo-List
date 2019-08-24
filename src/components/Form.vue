@@ -1,8 +1,8 @@
 <template>
-    <form id="form" action="submit">
-    <label for="todo" class="todoLabel">Today I Have To...</label>
-    <input type="text" placeholder="type your todo here" name="todo" class="todoInput">
-    <input type="submit" value="Vue Todo" class="submitBtn"/>
+    <form id="form" @submit="addTodo">
+      <label for="todo" class="todoLabel">Today I Have To...</label>
+      <input type="text" v-model="text" placeholder="type your todo here" id="todo" class="todoInput">
+      <input type="submit" value="Vue Todo" class="submitBtn"/>
     </form>
 </template>
 
@@ -12,7 +12,19 @@
 export default {
   data() {
     return {
-      todo: ''
+      text: ""
+    }
+  },
+  methods: {
+    addTodo(e){
+      e.preventDefault()
+      const newTodo = {
+        id: Date.now(),
+        text: this.text,
+        completed: false
+      }
+      this.$emit("add-todo", newTodo);
+      this.text = "";
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header/>
-    <Form />
-    <TodoContainer v-bind:todos="todos" v-bind:loading="loading" v-on:del-todo="deleteTodo"/>
+    <Form v-on:add-todo="addTodo" />
+    <TodoContainer v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
@@ -36,13 +36,15 @@ export default {
           text: "Todo Three",
           completed: false
         }
-      ],
-      loading: false
+      ]
     }
   },
     methods: {
       deleteTodo(id) {
           this.todos = this.todos.filter(todo => todo.id !== id)
+      },
+      addTodo(newTodo){
+        this.todos = [...this.todos, newTodo]
       }
   }
 }
