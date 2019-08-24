@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <Form v-on:add-todo="addTodo" />
-    <TodoContainer v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <TodoContainer v-bind:todos="todos" v-on:del-todo="deleteTodo" v-on:line-through="lineThrough"/>
   </div>
 </template>
 
@@ -43,6 +43,11 @@ export default {
       deleteTodo(id) {
           this.todos = this.todos.filter(todo => todo.id !== id)
       },
+       lineThrough(id) { 
+          const todoToggle = this.todos.find(todo => todo.id === id);
+            todoToggle.completed = !todoToggle.completed
+            this.$forceUpdate()
+       },
       addTodo(newTodo){
         this.todos = [...this.todos, newTodo]
       }

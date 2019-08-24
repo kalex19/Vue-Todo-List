@@ -1,9 +1,9 @@
 <template>
-  <output id="todoContainer">
+  <section id="todoContainer">
     <div v-bind:key="todo.id" v-for="todo in todos">
-      <Todo v-bind="todo" v-on:del-todo="$emit('del-todo', todo.id)"/>
+      <Todo v-bind="todo" v-on:del-todo="$emit('del-todo', todo.id)" v-on:line-through="$emit('line-through', todo.id)"/>
     </div>
-  </output>
+  </section>
 </template>
 
 <script>
@@ -21,7 +21,9 @@ export default {
 <style>
 
 #todoContainer {
-  
+  margin: 15% 30%;
+  width: 60%;
+  transform: rotate(345deg);
 }
 
 </style>

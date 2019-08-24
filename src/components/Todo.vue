@@ -1,6 +1,6 @@
 <template>
   <div class="todo" v-bind:class="{'isCompleted':completed}">
-    <h3 @click="lineThrough">{{text}}</h3>
+    <h3 @click="$emit('line-through')">{{text}}</h3>
     <button @click="$emit('del-todo')" class="deleteBtn">X</button>
   </div>
 </template>
@@ -13,23 +13,21 @@ export default {
     id: Number,
     text: String,
     completed: Boolean
-    },
-  methods: {
-    lineThrough() { 
-      this.completed = !this.completed;
     }
-  }
 }
 </script>
 
 <style>
 
 .todo {
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 30%;
 }
 
 h3 {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .isCompleted {
@@ -39,9 +37,9 @@ h3 {
 
 .deleteBtn {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.5em;
+  height: 30px;
+  width: 30px;
+  font-size: .5em;
   outline: none;
 }
 
