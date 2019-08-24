@@ -7,7 +7,6 @@
 <script>
 
 export default {
-
   data() {
     return {
       title: 'Vue Your Todos'
@@ -25,6 +24,6 @@ export default {
 h1 {
   color: pink;
   font-size: 4em;
-  }
+}
 
 </style>

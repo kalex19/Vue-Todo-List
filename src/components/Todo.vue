@@ -18,6 +18,7 @@ export default {
     starred: Boolean
     }
 }
+
 </script>
 
 <style>

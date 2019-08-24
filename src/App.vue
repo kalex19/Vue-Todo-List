@@ -42,23 +42,23 @@ export default {
       ]
     }
   },
-    methods: {
-      deleteTodo(id) {
-          this.todos = this.todos.filter(todo => todo.id !== id)
-      },
-       lineThrough(id) { 
-          const todoToggle = this.todos.find(todo => todo.id === id);
-            todoToggle.completed = !todoToggle.completed
-            this.$forceUpdate()
-       },
-      addTodo(newTodo){
-        this.todos = [...this.todos, newTodo]
-      },
-      starTodo(id){
-        const todoToggle = this.todos.find(todo => todo.id === id);
-            todoToggle.starred = !todoToggle.starred
-            this.$forceUpdate()
-      }
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id)
+    },
+    lineThrough(id) { 
+      const todoToggle = this.todos.find(todo => todo.id === id);
+      todoToggle.completed = !todoToggle.completed
+      this.$forceUpdate()
+    },
+    addTodo(newTodo){
+      this.todos = [...this.todos, newTodo]
+    },
+    starTodo(id){
+      const todoToggle = this.todos.find(todo => todo.id === id);
+      todoToggle.starred = !todoToggle.starred
+      this.$forceUpdate()
+    }
   }
 }
 </script>
@@ -68,7 +68,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  }
+}
 
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

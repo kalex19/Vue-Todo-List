@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 import Todo from "./Todo.vue"
 
 export default {
@@ -19,6 +20,7 @@ export default {
   },
   props:["todos"]
 }
+
 </script>
 
 <style>

@@ -66,4 +66,5 @@ export default {
   background-color: pink;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 </style>
