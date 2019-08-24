@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <Form />
-    <TodoContainer v-bind:todos="todos" v-bind:loading="loading"/>
+    <TodoContainer v-bind:todos="todos" v-bind:loading="loading" v-on:del-todo="deleteTodo"/>
   </div>
 </template>
 
@@ -39,6 +39,11 @@ export default {
       ],
       loading: false
     }
+  },
+    methods: {
+      deleteTodo(id) {
+          this.todos = this.todos.filter(todo => todo.id !== id)
+      }
   }
 }
 </script>

@@ -1,7 +1,8 @@
 <template>
-  <output id="todo" v-bind:class="{'isCompleted': todo.completed}" @click="() => lineThrough()">
-    <h3>{{todo.text}}</h3>
-  </output>
+  <div class="todo" v-bind:class="{'isCompleted':completed}">
+    <h3 @click="lineThrough">{{text}}</h3>
+    <button @click="$emit('del-todo')" class="deleteBtn">X</button>
+  </div>
 </template>
 
 <script>
@@ -15,7 +16,7 @@ export default {
     },
   methods: {
     lineThrough() { 
-      
+      this.completed = !this.completed;
     }
   }
 }
@@ -23,8 +24,25 @@ export default {
 
 <style>
 
+.todo {
+
+}
+
+h3 {
+  font-size: 3em;
+}
+
 .isCompleted {
   text-decoration: line-through;
+  text-decoration-color: pink;
+}
+
+.deleteBtn {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  outline: none;
 }
 
 
